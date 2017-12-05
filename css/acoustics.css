@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color:rgba(41, 88, 75, 1);
+}
+
+.top {
+	margin-top:150px;
+}
+
+.square {
+	width: 100%;
+	height: 175px;
+	background-color:rgba(196, 191, 172, 1);
+	margin-top: 25px;
+}
+
+.pressed {
+	width: 100%;
+	height: 175px;
+	background-color:rgba(45, 23, 14, 1);
+	margin-top: 25px;
+}

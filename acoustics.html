@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acoustics</title>
+
+<!-- Bootstrap -->
+<script src="js/jquery-1.11.3.min.js"></script> 
+<link href="css/bootstrap-3.3.7.css" rel="stylesheet" type="text/css">
+<link href="css/acoustics.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<audio class="bass-dry" contols="false" preload="none">
+	<source src="audio/Double_Bass/DoubleBass_DRY.wav" type="audio/wav">
+</audio>
+<audio class="bass-crypt" contols="false" preload="none">
+	<source src="audio/Double_Bass/DoubleBass_Crypt.wav" type="audio/wav">
+</audio>
+<audio class="bass-hall" contols="false" preload="none">
+	<source src="audio/Double_Bass/DoubleBass_HallFloor.wav" type="audio/wav">
+</audio>
+<audio class="bass-room" contols="false" preload="none">
+	<source src="audio/Double_Bass/DoubleBass_RoundRoom.wav" type="audio/wav">
+</audio>
+
+<audio class="percussion-dry" contols="false" preload="none">
+	<source src="audio/Percussion/Percussion_Dry.wav" type="audio/wav">
+</audio>
+<audio class="percussion-crypt" contols="false" preload="none">
+	<source src="audio/Percussion/Percussion_Crypt.wav" type="audio/wav">
+</audio>
+<audio class="percussion-hall" contols="false" preload="none">
+	<source src="audio/Percussion/Percussion_HallFloor.wav" type="audio/wav">
+</audio>
+<audio class="percussion-room" contols="false" preload="none">
+	<source src="audio/Percussion/Percussion_RoundRoom.wav" type="audio/wav">
+</audio>
+
+<audio class="speech-dry" contols="false" preload="none">
+	<source src="audio/Speech/Speech_Dry.wav" type="audio/wav">
+</audio>
+<audio class="speech-crypt" contols="false" preload="none">
+	<source src="audio/Speech/Speech_Crypt.wav" type="audio/wav">
+</audio>
+<audio class="speech-hall" contols="false" preload="none">
+	<source src="audio/Speech/Speech_HallFloor.wav" type="audio/wav">
+</audio>
+<audio class="speech-room" contols="false" preload="none">
+	<source src="audio/Speech/Speech_RoundRoom.wav" type="audio/wav">
+</audio>
+
+<audio class="trumpet-dry" contols="false" preload="none">
+	<source src="audio/Trumpet/Trumpet_Dry.wav" type="audio/wav">
+</audio>
+<audio class="trumpet-crypt" contols="false" preload="none">
+	<source src="audio/Trumpet/Trumpet_Crypt.wav" type="audio/wav">
+</audio>
+<audio class="trumpet-hall" contols="false" preload="none">
+	<source src="audio/Trumpet/Trumpet_HallFloor.wav" type="audio/wav">
+</audio>
+<audio class="trumpet-room" contols="false" preload="none">
+	<source src="audio/Trumpet/Trumpet_RoundRoom.wav" type="audio/wav">
+</audio>
+
+<div class="row top">
+	<div class="col-md-offset-1 col-md-2">
+		<button class="btn btn-default square instrument double-bass">Double Bass</button>
+	</div>
+	<div class="col-md-2">
+		<button class="btn btn-default square instrument percussion">Percussion</button>
+	</div>
+	<div class="col-md-offset-2 col-md-2">
+		<button class="btn btn-default square reverb dry">Dry</button>
+	</div>
+	<div class="col-md-2">
+		<button class="btn btn-default square reverb crypt">Crypt</button>
+	</div>
+</div>
+
+<div class="row bottom">
+	<div class="col-md-offset-1 col-md-2">
+		<button class="btn btn-default square instrument speech">Speech</button>
+	</div>
+	<div class="col-md-2">
+		<button class="btn btn-default square instrument trumpet">Trumpet</button>
+	</div>
+	<div class="col-md-offset-2 col-md-2">
+		<button class="btn btn-default square reverb hall-floor">Hall Floor</button>
+	</div>
+	<div class="col-md-2">
+		<button class="btn btn-default square reverb round-room">Round Room</button>
+	</div>
+</div>
+<script src="js/acoustics.js"></script>
+</body>
+</html>
