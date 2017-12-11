@@ -3,10 +3,11 @@
 
 body {
 	background-color:rgba(41, 88, 75, 1);
+	color:#FFF;
 }
 
 .top {
-	margin-top:150px;
+	margin-top:80px;
 }
 
 .square {
@@ -21,4 +22,20 @@ body {
 	height: 175px;
 	background-color:rgba(45, 23, 14, 1);
 	margin-top: 25px;
+}
+
+h1 {
+	text-align: center;
+}
+
+footer .btn-default {
+	position:absolute;
+	bottom:5px;
+	right:20px;
+	background-color: rgba(41, 88, 75, 0.7);
+	text-decoration: none;
+}
+
+footer .btn-default a {
+	color: #FFF;
 }

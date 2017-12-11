@@ -11,7 +11,7 @@ body
 .topic
 {
 	color: rgb(255, 247, 225);
-	height: 135px;
+	height: 110px;
 	text-align: center;
 	transition:.5s;
 	margin:0 10px 10px;
@@ -77,5 +77,5 @@ h2
 
 #topic6
 {
-	background-color: rgb(62,132,190);
+	background-color: rgb(41, 88, 75);
 }

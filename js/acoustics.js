@@ -1,6 +1,7 @@
 // JavaScript Document
-$(document).ready(function(){
+$(document).ready(function () {
 	"use strict";
+	
 	var bassDry = $(".bass-dry");
 	var bassCrypt = $(".bass-crypt");
 	var bassHall = $(".bass-hall");
@@ -25,183 +26,258 @@ $(document).ready(function(){
 	var trumpetRoom = $(".trumpet-room");
 	var trumpetArray = [trumpetDry, trumpetCrypt, trumpetHall, trumpetRoom];
 	
-	var instrumentBtns = [$(".double-bass"), $(".percussion"), $(".speech"), $(".trumpet")];
-	var reverbBtns = [$(".dry"), $(".crypt"), $(".hall-floor"), $(".round-room")];
+	function loadAudioFiles() {
+		bassArray.forEach(function (audioFile) {
+			audioFile.trigger('load');
+		});
+		percussionArray.forEach(function (audioFile) {
+			audioFile.trigger('load');
+		});
+		speechArray.forEach(function (audioFile) {
+			audioFile.trigger('load');
+		});
+		trumpetArray.forEach(function (audioFile) {
+			audioFile.trigger('load');
+		});
+	}
+
+	function stopAudio() {
+		bassArray.forEach(function (audioFile) {
+			audioFile.trigger('pause');
+			audioFile.prop('currentTime', 0);
+		});
+		
+		percussionArray.forEach(function (audioFile) {
+			audioFile.trigger('pause');
+			audioFile.prop('currentTime', 0);
+		});
+		
+		speechArray.forEach(function (audioFile) {
+			audioFile.trigger('pause');
+			audioFile.prop('currentTime', 0);
+		});
+		
+		trumpetArray.forEach(function (audioFile) {
+			audioFile.trigger('pause');
+			audioFile.prop('currentTime', 0);
+		});
+	}
 	
 	loadAudioFiles();
+
+	$(".double-bass").click(function() {
+		stopAudio();
+
+	if ($(".double-bass").hasClass("pressed")) {
+		$(".double-bass").removeClass("pressed");
+		return;
+	}
+
+	if ($(".percussion").hasClass("pressed")) {
+		$(".percussion").removeClass("pressed");
+	}
+	if ($(".speech").hasClass("pressed")) {
+		$(".speech").removeClass("pressed");
+	}
+	if ($(".trumpet").hasClass("pressed")) {
+		$(".trumpet").removeClass("pressed");
+	}
+
+	$(".double-bass").addClass("pressed");
+
+	if ($(".dry").hasClass("pressed")) {
+		bassDry.trigger("play");
+	}
+	if ($(".crypt").hasClass("pressed")) {
+		bassCrypt.trigger("play");
+	}
+	if ($(".hall-floor").hasClass("pressed")) {
+		bassHall.trigger("play");
+	}
+	if ($(".round-room").hasClass("pressed")) {
+		bassRoom.trigger("play");
+	}
+	});
+
+	$(".percussion").click(function() {
+		stopAudio();
+
+	if ($(".percussion").hasClass("pressed")) {
+		$(".percussion").removeClass("pressed");
+		return;
+	}
+
+	if ($(".double-bass").hasClass("pressed")) {
+		$(".double-bass").removeClass("pressed");
+	}
+	if ($(".speech").hasClass("pressed")) {
+		$(".speech").removeClass("pressed");
+	}
+	if ($(".trumpet").hasClass("pressed")) {
+		$(".trumpet").removeClass("pressed");
+	}
+
+	$(".percussion").addClass("pressed");
+
+	if ($(".dry").hasClass("pressed")) {
+		percussionDry.trigger("play");
+	}
+	if ($(".crypt").hasClass("pressed")) {
+		percussionCrypt.trigger("play");
+	}
+	if ($(".hall-floor").hasClass("pressed")) {
+		percussionHall.trigger("play");
+	}
+	if ($(".round-room").hasClass("pressed")) {
+		percussionRoom.trigger("play");
+	}
+	});
+
+	$(".trumpet").click(function() {
+		stopAudio();
+
+	if ($(".trumpet").hasClass("pressed")) {
+		$(".trumpet").removeClass("pressed");
+		return;
+	}
+
+	if ($(".double-bass").hasClass("pressed")) {
+		$(".double-bass").removeClass("pressed");
+	}
+	if ($(".speech").hasClass("pressed")) {
+		$(".speech").removeClass("pressed");
+	}
+	if ($(".percussion").hasClass("pressed")) {
+		$(".percussion").removeClass("pressed");
+	}
+
+	$(".trumpet").addClass("pressed");
+
+	if ($(".dry").hasClass("pressed")) {
+		trumpetDry.trigger("play");
+	}
+	if ($(".crypt").hasClass("pressed")) {
+		trumpetCrypt.trigger("play");
+	}
+	if ($(".hall-floor").hasClass("pressed")) {
+		trumpetHall.trigger("play");
+	}
+	if ($(".round-room").hasClass("pressed")) {
+		trumpetRoom.trigger("play");
+	}
+	});
+
+	$(".speech").click(function() {
+		stopAudio();
+
+	if ($(".speech").hasClass("pressed")) {
+		$(".speech").removeClass("pressed");
+		return;
+	}
+
+	if ($(".double-bass").hasClass("pressed")) {
+		$(".double-bass").removeClass("pressed");
+	}
+	if ($(".percussion").hasClass("pressed")) {
+		$(".percussion").removeClass("pressed");
+	}
+	if ($(".trumpet").hasClass("pressed")) {
+		$(".trumpet").removeClass("pressed");
+	}
+
+	$(".speech").addClass("pressed");
+
+	if ($(".dry").hasClass("pressed")) {
+		speechDry.trigger("play");
+	}
+	if ($(".crypt").hasClass("pressed")) {
+		speechCrypt.trigger("play");
+	}
+	if ($(".hall-floor").hasClass("pressed")) {
+		speechHall.trigger("play");
+	}
+	if ($(".round-room").hasClass("pressed")) {
+		speechRoom.trigger("play");
+	}
+	});
+
+	$(".dry").click(function() {
+		stopAudio();
+
+		if ($(".dry").hasClass("pressed")) {
+			$(".dry").removeClass("pressed");
+			return;
+		}
 	
-	// button click handler
-	$('button').click(function() {
-		if($.inArray($(this), instrumentBtns) !== -1 || $.inArray($(this), instrumentBtns) > -1) {
-			instrumentBtns.forEach(function(button) {
-				if(button.hasClass('pressed')) {
-					button.removeClass('pressed');
-				}
-			});
-		} else {
-			reverbBtns.forEach(function(button) {
-				if(button.hasClass('pressed')) {
-					button.removeClass('pressed');
-				}
-			});
-		}
-		
-		$(this).addClass('pressed');
-		
-		// this is where LINQ would be useful
-		
-		var instrumentBtn;
-		var reverbBtn;
-		var twoButtonsPressed = instrumentBtns.some(function(button) {
-			button.hasClass('pressed');
-		});
-		
-		if(twoButtonsPressed) {
-			console.log("this is true");
-			twoButtonsPressed = reverbBtns.some(function(button) { 
-				button.hasClass('pressed'); 
-			});
-		}
-		
-		if(twoButtonsPressed) {
-			
-			instrumentBtn = instrumentBtns.find(function(button) {
-				button.hasClass('pressed');
-			});
-			reverbBtn = reverbBtn.find(function(button) {
-				button.hasClass('pressed');
-			});
-			var audioFile = findAudioFile(instrumentBtn, reverbBtn);
-			playAudio(audioFile);
-		}	
+		if ($(".crypt").hasClass("pressed")) 		{ $(".crypt").removeClass("pressed"); }
+		if ($(".hall-floor").hasClass("pressed")) 	{ $(".hall-floor").removeClass("pressed"); }
+		if ($(".round-room").hasClass("pressed")) 	{ $(".round-room").removeClass("pressed"); }
+	
+		$(".dry").addClass("pressed");
+	
+		if ($(".double-bass").hasClass("pressed")) 	{ bassDry.trigger("play"); }
+		if ($(".percussion").hasClass("pressed")) 	{ percussionDry.trigger("play"); }
+		if ($(".trumpet").hasClass("pressed")) 		{ trumpetDry.trigger("play"); }
+		if ($(".speech").hasClass("pressed")) 		{ speechDry.trigger("play"); }
 	});
 	
-	function loadAudioFiles() {
-		bassArray.forEach(function(audioFile) {
-			audioFile.trigger('load');
-		});
-		percussionArray.forEach(function(audioFile) {
-			audioFile.trigger('load');
-		});
-		speechArray.forEach(function(audioFile) {
-			audioFile.trigger('load');
-		});
-		trumpetArray.forEach(function(audioFile) {
-			audioFile.trigger('load');
-		});
-	}
-	
-	function playAudio(audioToPlay) {
-		bassArray.forEach(function(audioFile) {
-			if(audioFile.prop('currentTime') > 0 ) {
-				audioFile.animate({volume:0}, 500);
-			}
-		});
-		
-		percussionArray.forEach(function(audioFile) {
-			if(audioFile.prop('currentTime') > 0 ) {
-				audioFile.animate({volume:0}, 500);
-			}
-		});
-		
-		speechArray.forEach(function(audioFile) {
-			if(audioFile.prop('currentTime') > 0 ) {
-				audioFile.animate({volume:0}, 500);
-			}
-		});
-		
-		trumpetArray.forEach(function(audioFile) {
-			if(audioFile.prop('currentTime') > 0 ) {
-				audioFile.animate({volume:0}, 500);
-			}
-		});
-		
+	$(".crypt").click(function() {
 		stopAudio();
-		
-		audioToPlay.trigger('play');
-		audioToPlay.animate({volume:0.7}, 1000);
-	}
-	
-	function stopAudio() {
-		bassArray.forEach(function(audioFile) {
-			audioFile.trigger('pause');
-			audioFile.prop('currentTime', 0); 
-		});
-		
-		percussionArray.forEach(function(audioFile) {
-			audioFile.trigger('pause');
-			audioFile.prop('currentTime', 0); 
-		});
-		
-		speechArray.forEach(function(audioFile) {
-			audioFile.trigger('pause');
-			audioFile.prop('currentTime', 0); 
-		});
-		
-		trumpetArray.forEach(function(audioFile) {
-			audioFile.trigger('pause');
-			audioFile.prop('currentTime', 0); 
-		});
-	}
-	
-	function findAudioFile(instrumentButton, reverbButton) {
-		console.log("finding audio file");
 
-		if(instrumentButton === $('.double-bass')) {
-			if(reverbButton === $('.dry')) {
-				return bassDry;
-			}
-			if(reverbButton === $('.crypt')) {
-				return bassCrypt;
-			}
-			if(reverbButton === $('.hall')) {
-				return bassHall;
-			}
-			if(reverbButton === $('.room')) {
-				return bassRoom;
-			}
+		if ($(".crypt").hasClass("pressed")) {
+			$(".crypt").removeClass("pressed");
+			return;
 		}
-		if(instrumentButton === $('.percussion')) {
-			if(reverbButton === $('.dry')) {
-				return percussionDry;
-			}
-			if(reverbButton === $('.crypt')) {
-				return percussionCrypt;
-			}
-			if(reverbButton === $('.hall')) {
-				return percussionHall;
-			}
-			if(reverbButton === $('.room')) {
-				return percussionRoom;
-			}
+	
+		if ($(".dry").hasClass("pressed")) 			{ $(".dry").removeClass("pressed"); }
+		if ($(".hall-floor").hasClass("pressed")) 	{ $(".hall-floor").removeClass("pressed"); }
+		if ($(".round-room").hasClass("pressed")) 	{ $(".round-room").removeClass("pressed"); }
+	
+		$(".crypt").addClass("pressed");
+	
+		if ($(".double-bass").hasClass("pressed")) 	{ bassCrypt.trigger("play"); }
+		if ($(".percussion").hasClass("pressed")) 	{ percussionCrypt.trigger("play"); }
+		if ($(".trumpet").hasClass("pressed")) 		{ trumpetCrypt.trigger("play"); }
+		if ($(".speech").hasClass("pressed")) 		{ speechCrypt.trigger("play"); }
+	});
+	
+	$(".hall-floor").click(function() {
+		stopAudio();
+
+		if ($(".hall-floor").hasClass("pressed")) {
+			$(".hall-floor").removeClass("pressed");
+			return;
 		}
-		if(instrumentButton === $('.speech')) {
-			if(reverbButton === $('.dry')) {
-				return speechDry;
-			}
-			if(reverbButton === $('.crypt')) {
-				return speechCrypt;
-			}
-			if(reverbButton === $('.hall')) {
-				return speechHall;
-			}
-			if(reverbButton === $('.room')) {
-				return speechRoom;
-			}
+	
+		if ($(".crypt").hasClass("pressed")) 		{ $(".crypt").removeClass("pressed"); }
+		if ($(".dry").hasClass("pressed")) 			{ $(".dry").removeClass("pressed"); }
+		if ($(".round-room").hasClass("pressed")) 	{ $(".round-room").removeClass("pressed"); }
+	
+		$(".hall-floor").addClass("pressed");
+	
+		if ($(".double-bass").hasClass("pressed")) 	{ bassHall.trigger("play"); }
+		if ($(".percussion").hasClass("pressed")) 	{ percussionHall.trigger("play"); }
+		if ($(".trumpet").hasClass("pressed")) 		{ trumpetHall.trigger("play"); }
+		if ($(".speech").hasClass("pressed")) 		{ speechHall.trigger("play"); }
+	});
+	
+	$(".round-room").click(function() {
+		stopAudio();
+
+		if ($(".round-room").hasClass("pressed")) {
+			$(".round-room").removeClass("pressed");
+			return;
 		}
-		if(instrumentButton === $('.trumpet')) {
-			if(reverbButton === $('.dry')) {
-				return trumpetDry;
-			}
-			if(reverbButton === $('.crypt')) {
-				return trumpetCrypt;
-			}
-			if(reverbButton === $('.hall')) {
-				return trumpetHall;
-			}
-			if(reverbButton === $('.room')) {
-				return trumpetRoom;
-			}
-		}
-	}
+	
+		if ($(".crypt").hasClass("pressed")) 		{ $(".crypt").removeClass("pressed"); }
+		if ($(".dry").hasClass("pressed")) 			{ $(".dry").removeClass("pressed"); }
+		if ($(".hall-floor").hasClass("pressed")) 	{ $(".hall-floor").removeClass("pressed"); }
+	
+		$(".round-room").addClass("pressed");
+	
+		if ($(".double-bass").hasClass("pressed")) 	{ bassRoom.trigger("play"); }
+		if ($(".percussion").hasClass("pressed")) 	{ percussionRoom.trigger("play"); }
+		if ($(".trumpet").hasClass("pressed")) 		{ trumpetRoom.trigger("play"); }
+		if ($(".speech").hasClass("pressed")) 		{ speechRoom.trigger("play"); }
+	});
 });
