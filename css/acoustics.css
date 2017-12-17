@@ -28,6 +28,12 @@ h1 {
 	text-align: center;
 }
 
+p {
+	font-size:18px;
+	text-align: center;
+	margin-top: 20px;
+}
+
 footer .btn-default {
 	position:absolute;
 	bottom:5px;
@@ -38,4 +44,60 @@ footer .btn-default {
 
 footer .btn-default a {
 	color: #FFF;
+}
+
+.double-bass {
+	background: url(../img/buttons/Bass.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.trumpet {
+	background: url(../img/buttons/Trumpet.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.percussion {
+	background: url(../img/buttons/Percussion.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.speech {
+	background: url(../img/buttons/Speech.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.dry {
+	background: url(../img/buttons/Mic.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.round-room {
+	background: url(../img/buttons/SmallRoom.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.crypt {
+	background: url(../img/buttons/Crypt.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.hall-floor {
+	background: url(../img/buttons/Hall.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
