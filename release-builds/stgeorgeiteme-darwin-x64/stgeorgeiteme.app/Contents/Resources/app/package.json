@@ -1,0 +1,28 @@
+{
+  "name": "stgeorgeiteme",
+  "version": "1.0.0",
+  "description": "Interactive Screen Item E",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"StGeorgeItemA\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidFlores24/StGeorgeItemE.git"
+  },
+  "author": "David Flores",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidFlores24/StGeorgeItemE/issues"
+  },
+  "homepage": "https://github.com/DavidFlores24/StGeorgeItemE#readme",
+  "dependencies": {
+    "electron": "^1.7.9"
+  },
+  "devDependencies": {
+    "electron-packager": "^10.1.0"
+  }
+}

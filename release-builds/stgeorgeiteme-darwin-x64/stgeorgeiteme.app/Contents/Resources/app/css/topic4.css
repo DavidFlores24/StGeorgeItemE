@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* CSS Document */
+img
+{
+	height:600px;
+	width:auto;
+	left:10%;
+	position: relative;
+}
+
+#transcript
+{
+	position: absolute;
+	top: 10%;
+	font-size: 1.3em;
+	height: 720px;
+	color: rgb(255, 247, 225);
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+body
+{
+	background: url(../img/Audio.jpg);
+	background-size: cover;
+	color: rgb(255, 247, 225);
+	line-height: 2.2em;
+}
+
+.btn-default
+{
+	position:absolute;
+	bottom:5px;
+	right:20px;
+	background-color: rgba(41, 88, 75, 0.7);
+	text-decoration: none;
+}
+
+a {
+	color:white;
+}

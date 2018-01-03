@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background: rgba(41,88,75,1.00)
+}
+
+.acoustics-video {
+	left: 50%;
+	margin-top: 13%;
+}
+
+video {
+	position: relative;
+	width: 100%;
+	height:auto;
+}

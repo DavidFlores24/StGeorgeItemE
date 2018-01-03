@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color:rgba(41, 88, 75, 1);
+	color:#FFF;
+}
+
+.top {
+	margin-top:80px;
+}
+
+.square {
+	width: 100%;
+	height: 175px;
+	background-color:rgba(196, 191, 172, 1);
+	margin-top: 25px;
+}
+
+.pressed {
+	width: 100%;
+	height: 175px;
+	background-color:rgba(45, 23, 14, 1);
+	margin-top: 25px;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	font-size:18px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+footer .btn-default {
+	position:absolute;
+	bottom:5px;
+	right:20px;
+	background-color: rgba(41, 88, 75, 0.7);
+	text-decoration: none;
+}
+
+footer .btn-default a {
+	color: #FFF;
+}
+
+.double-bass {
+	background: url(../img/buttons/Bass.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.trumpet {
+	background: url(../img/buttons/Trumpet.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.percussion {
+	background: url(../img/buttons/Percussion.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.speech {
+	background: url(../img/buttons/Speech.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.dry {
+	background: url(../img/buttons/Mic.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.round-room {
+	background: url(../img/buttons/SmallRoom.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.crypt {
+	background: url(../img/buttons/Crypt.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.hall-floor {
+	background: url(../img/buttons/Hall.jpg);
+	background-size: 150px, 150px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
