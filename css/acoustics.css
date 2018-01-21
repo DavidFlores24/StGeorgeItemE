@@ -35,15 +35,14 @@ p {
 }
 
 footer .btn-default {
-	position:absolute;
-	bottom:5px;
-	right:20px;
 	background-color: rgba(41, 88, 75, 0.7);
+	position:absolute;
+	bottom:80px;
+	left:80%;
 	text-decoration: none;
-}
-
-footer .btn-default a {
-	color: #FFF;
+	color:white;
+	width: 200px;
+    height: 70px;
 }
 
 .double-bass {

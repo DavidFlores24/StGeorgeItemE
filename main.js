@@ -10,9 +10,10 @@ let mainWindow;
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({
 		backgroundColor:'#13375c',
-		width: 1245,
-		height: 700
+		fullscreen: true
 	});
+	
+	mainWindow.setMenu(null);
 	
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'index.html'),
